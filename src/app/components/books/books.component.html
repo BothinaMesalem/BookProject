@@ -1,0 +1,24 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Published Year</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.genre }}</td>
+        <td>{{ book.publishedYear }}</td>
+        <td>
+          <button (click)="Delete(book.id)" class="btn btn-danger">Delete</button>
+          <a [routerLink]="['/edit-book', book.id]" class="btn btn-warning">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
